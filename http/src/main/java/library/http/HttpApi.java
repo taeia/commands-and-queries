@@ -83,8 +83,8 @@ public class HttpApi {
      */
     private void handle(HttpExchange exchange) throws IOException {
         String request = exchange.getRequestMethod() + " " + exchange.getRequestURI().getPath();
-        Map<String, String> query = query(exchange.getRequestURI().getRawQuery());
         try {
+            Map<String, String> query = query(exchange.getRequestURI().getRawQuery());
             reply(exchange, 200, switch (request) {
                 case "POST /borrow" -> borrow(query);
                 case "POST /return" -> returnCopy(query);
