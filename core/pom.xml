@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>domain-centric-architecture</groupId>
+        <artifactId>commands-and-queries</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>core</artifactId>
+
+    <!-- The inside of the hexagon: the domain, the application services, and the ports
+         on the edge. It depends on nothing in the project and on no library. The
+         driving ports now come in two kinds, commands and queries, and the records
+         that cross them live beside them; the domain package is unchanged. JUnit is
+         here in test scope only, for the unit tests of the rules. -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
